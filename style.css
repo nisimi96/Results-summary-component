@@ -1,0 +1,375 @@
+:root {
+    --Blue: #1125D6;
+    --blue-95-white: linear-gradient(0deg, rgba(255, 255, 255, 0.95)0%, rgba(255, 255, 255, 0.95)100%), #1125D6;
+    --Dark-Navy: #303B59;
+    --green-95-white: linear-gradient(0deg, rgba(255, 255, 255, 0.95)0%, rgba(255, 255, 255, 0.95)100%), #00BB8F;
+    --Green: #00BB8F;
+    --yellow-95-white: linear-gradient(0deg, rgba(255, 255, 255, 0.95)0%, rgba(255, 255, 255, 0.95)100%), #FFB21E;
+    --Yellow: #FFB21E;
+    --red-95-white: linear-gradient(0deg, rgba(255, 255, 255, 0.95)0%, rgba(255, 255, 255, 0.95)100%), #F55;
+    --Red: #F55;
+    --White: #FFF;
+    --Light-Blue: #CAC9FF;
+    --Gradient-1: linear-gradient(180deg, #75F 0%, #6943FF 0.01%, #2F2CE9 100%);
+    --Gradient-2: linear-gradient(180deg, #4D21C9 0%, rgba(37, 33, 201, 0.00) 100%, rgba(37, 33, 201, 0.00) 100%);
+    --Very-Light-blue: #ECF2FF;
+
+    --fs18: 18px;
+    --fs72: 72px;
+    --fs24: 24px;
+    --fs32: 32px;
+    --fs56: 56px;
+    --fs16: 16px;
+
+    --regular: 500;
+    --bold: 700;
+    --bolder: 800;
+
+    --space-0: 0px;
+
+    --line72: 72px;
+
+
+}
+  /* reset */
+* {
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    box-sizing: border-box;
+
+}
+
+
+/* Body styling and location so everything will be in the center */
+
+body  {
+    background-color: var(--Very-Light-blue); 
+    font-family: "Hanken Grotesk", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+/* some utilities colors for styling withing html */
+
+.red-sum {color: var(--Red);}
+.yellow-sum {color: var(--Yellow);}
+.green-sum {color: var(--Green);}
+.blue-sum {color: var(--Blue);}
+.red-bg {background: var(--red-95-white);}
+.yellow-bg {background: var(--yellow-95-white);}
+.green-bg {background: var(--green-95-white);}
+.blue-bg {background: var(--blue-95-white);}
+
+/* set location and flexboxes to the main container and cards */
+
+.main-container {
+    display: flex;
+    background-color: white; 
+    width: 736px;
+    height: 512px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15vh;
+    border-radius: 32px;
+    box-shadow: 0px 30px 60px 0px rgba(61, 108, 236, 0.15);
+    
+}
+
+/* purple side or results side flexbox and direction */
+
+.result-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--Gradient-1);
+    height: 100%;
+    width: 50%;
+    border-radius: 32px;
+}
+
+/* white side or summary side flexbox and direction */
+
+.summary-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    height: 100%;
+    width: 50%;
+    background: var(--White);
+    border-radius: 32px;
+    padding: 38px 40px 46px 40px;
+    transition: scale 0.3 ease;
+}
+
+/* purple side or result side start styling and position */
+
+/*h1*/
+
+.purple-side-heading {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--Light-Blue);
+    padding: 2rem;
+}
+
+/* big circle in center size and style */
+
+.result-number {
+    background: var(--Gradient-2);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+/* in side the  big circle styling and positions */ 
+
+.big-number {
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 72px;
+    color: var(--White);
+    
+}
+
+.small-number {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--Light-Blue);
+    opacity: 0.5168;
+}
+
+/* second titles under the big circle styling and and positions */
+
+.second-title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--White);
+    margin-bottom: 14px;
+}
+
+.text {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: var(--Light-Blue);
+    text-align: center;
+    width: 69%; 
+    margin-bottom: 55px;   
+}
+
+
+
+/* >>>>>white side styling locations and some hover states and animations<<<<<<< */
+
+/* title */
+
+.summary-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--Dark-Navy);
+    margin-bottom: 28px;    
+}
+
+/* stats container styling and hover state 
+   we put in side main container 2 divs one for left side
+   and one for right side call "numbers"*/
+
+.stats-main-container {
+    margin-bottom: 16px;
+    width: 288px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-around;
+    gap: 81px;
+    align-items: center;
+    flex-shrink: 0;
+    transition: scale 190ms linear 10ms;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.stats-main-container:hover {
+    scale: 1.1;
+}
+
+/* locations and styling to the side number on each stats container */
+/* left side */
+.left-side {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+/* right side  */ 
+.numbers {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--Dark-Navy);
+    
+}
+
+span {
+    margin-left: 8px;
+    opacity: 0.5;
+}
+
+/* reset the margin on the last container to have the right spacing to the button */
+
+.blue-bg {margin-bottom: 0;} 
+
+/* button  styling positions */
+
+.dark-button {
+    background: var(--Dark-Navy);
+    color: var(--White);
+    border: 0;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 288px;
+    height: 56px;    
+    flex-shrink: 0;
+    border-radius: 128px;
+    margin-top: 41px;
+    transition: scale 400ms linear 10ms;
+}
+
+.dark-button:hover {
+    background: var(--Gradient-1);
+    scale: 1.1;
+    cursor: pointer;
+}
+
+/*styling and animation to the purple card to add some attractive */
+
+.result-card {
+    transition: transform 0.3s ease;
+    transform-origin: left;
+}
+
+.result-card:hover {
+    transform: scaleX(1.1);
+}
+
+
+
+
+/*
+
+
+media
+
+
+
+*/
+
+
+
+/* media styling and position all elements to other directions */
+
+@media screen and (max-width: 736px) {
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        margin-top: 0;
+        border-radius: 0;
+    }
+    /* making all stretch nicely on smaller screens */
+    .result-card {
+        height: 50%;
+        width: 100%;
+        margin-top: -40px;
+        border-radius: 0 0 32px 32px;
+        animation: moveUpDown 3s ease-in-out infinite;
+    }
+
+    @keyframes moveUpDown {
+        0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(20px); /* Adjust the value to control the distance */
+          }
+        
+    }
+    .summary-card {
+        height: 50%;
+        width: 100%;
+        padding: 24px 30px 30px 30px;
+        align-items: center;
+    }
+    .stats-main-container {
+        width: 80%;
+    }
+    .summary-title {
+        align-self: start;
+        
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .result-number {
+        height: 140px;
+        width: 140px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .stats-main-container {
+        width: 315px;
+    }
+    
+}
+
+
+/* media for height problems */ 
+
+@media screen and (max-height: 730px) {
+    .main-container {
+        margin-top: 10vh;
+        
+    }
+    
+}
+
+@media screen and (max-height: 635px) {
+    .main-container {
+        margin-top: 5vh;
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-height: 512px) {
+    .main-container {
+        margin-top: 0;
+        width: 100%;
+    }
+    
+}
